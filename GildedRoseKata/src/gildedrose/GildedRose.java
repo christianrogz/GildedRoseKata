@@ -3,7 +3,6 @@ package gildedrose;
 import java.util.List;
 
 public class GildedRose {
-	int numeros;
 	public void updateQuality(List<Item> items) {
 		for (Item item : items) {
 
