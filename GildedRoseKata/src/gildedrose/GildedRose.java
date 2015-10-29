@@ -3,8 +3,64 @@ package gildedrose;
 import java.util.List;
 
 public class GildedRose {
+	
+	public Quality quality = new Quality();
+	public AgedBrie agedBrie = new AgedBrie();
+	public Sulfuras sulfuras = new Sulfuras();
+	public BackstagePasses backstagePasses = new BackstagePasses();
+	public Conjured conjured = new Conjured();
+	
 	public void updateQuality(List<Item> items) {
 		for (Item item : items) {
+			
+			/*if(item.getName().equals("Conjured"))
+			{
+				conjured.update(item);
+			}*/
+			if(item.getName().equals("NORMAL ITEM"))
+			{
+				quality.update(item);
+			}
+			if(item.getName().equals("Aged Brie"))
+			{
+				agedBrie.update(item);
+			}
+			if(item.getName().equals("Sulfuras, Hand of Ragnaros"))
+			{
+				sulfuras.update(item);
+			}
+			if(item.getName().equals("Backstage passes to a TAFKAL80ETC concert"))
+			{
+				backstagePasses.update(item);
+			}
+			if(item.getName().equals("Conjured Mana Cake"))
+			{
+				conjured.update(item);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			if(!item.getName().equals("Sulfuras, Hand of Ragnaros"))
+			{
+				if(item.getSellIn() < 1)
+				{
+					// reduceSellIn dos veces mas rapido
+					item.setSellIn(item.getSellIn() - 2);
+				} else {
+					item.setSellIn(item.getSellIn() - 1);
+				}
+			}
+			
+			
+			
+			
+			
+			/*
 
 			if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
 				if (item.getQuality() > 0) {
@@ -18,23 +74,25 @@ public class GildedRose {
 
 					if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
 						if (item.getSellIn() < 11) {
-							if (item.getQuality() < 50) {
-								item.setQuality(item.getQuality() + 1);
-							}
+//							if (item.getQuality() < 50) {
+//								//item.setQuality(item.getQuality() + 1);								
+//							}
+							quality.update(item);							
 						}
 
 						if (item.getSellIn() < 6) {
-							if (item.getQuality() < 50) {
-								item.setQuality(item.getQuality() + 1);
-							}
+//							if (item.getQuality() < 50) {
+//								item.setQuality(item.getQuality() + 1);
+//							}
+							quality.update(item);							
 						}
 					}
 				}
 			}
 
-			if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-				item.setSellIn(item.getSellIn() - 1);
-			}
+//			if (item.getName() != "Sulfuras, Hand of Ragnaros") {
+//				item.setSellIn(item.getSellIn() - 1);
+//			}
 
 			if (item.getSellIn() < 0) {
 				if (item.getName() != "Aged Brie") {
@@ -53,7 +111,13 @@ public class GildedRose {
 					}
 				}
 			}
-		}
+			
+			*/
+			
+			
+			
+		}	
+		
 	}
 
 }
