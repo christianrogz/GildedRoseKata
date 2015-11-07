@@ -11,34 +11,51 @@ public class GildedRose {
 	public Conjured conjured = new Conjured();
 	
 	public void updateQuality(List<Item> items) {
-		for (Item item : items) {
+		Context context = null;
+		for (Item item : items) {	
 			
-			/*if(item.getName().equals("Conjured"))
-			{
-				conjured.update(item);
-			}*/
+			
+			/* Singleton solo puede crear un objeto
+			 * Factory crea un objeto para poder crear otros objetos
+			 * Builder crea objetos apartir de objetos
+			 * Adapter relacionar dos interfaces diferentes
+			 * Facade llamar a un objeto para crer otro objeto con casi las mismas caracteristicas
+			 * Proxy un intermediario para accesar a otro objeto
+			 * Command una interfaz que encapsula comandos repetidos para distintos objetos
+			 * Strategy interfaz para elejir diferentes objetos segun el cual se necesite
+			 */
+				
+			
 			if(item.getName().equals("NORMAL ITEM"))
 			{
-				quality.update(item);
+				context = new Context(new Quality());
+				context.executeStrategy(item);
+				//quality.update(item);
 			}
 			if(item.getName().equals("Aged Brie"))
 			{
-				agedBrie.update(item);
+				context = new Context(new AgedBrie());
+				context.executeStrategy(item);
+				//agedBrie.update(item);
 			}
 			if(item.getName().equals("Sulfuras, Hand of Ragnaros"))
 			{
-				sulfuras.update(item);
+				context = new Context(new Sulfuras());
+				context.executeStrategy(item);
+				//sulfuras.update(item);
 			}
 			if(item.getName().equals("Backstage passes to a TAFKAL80ETC concert"))
 			{
-				backstagePasses.update(item);
+				context = new Context(new BackstagePasses());
+				context.executeStrategy(item);
+				//backstagePasses.update(item);
 			}
 			if(item.getName().equals("Conjured Mana Cake"))
 			{
-				conjured.update(item);
-			}
-			
-			
+				context = new Context(new Conjured());
+				context.executeStrategy(item);
+				//conjured.update(item);
+			}	
 			
 			
 			

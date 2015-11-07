@@ -1,7 +1,7 @@
 package gildedrose;
 
-public class Quality {
-	
+public class Quality implements Strategy{
+	@Override
 	public void update(Item item) {
 		if (item.getQuality() > 0) {
 			if(item.getSellIn() < 1) {

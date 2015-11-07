@@ -1,6 +1,6 @@
 package gildedrose;
 
-public class Conjured extends Quality{
+public class Conjured implements Strategy{
 	@Override
 	public void update(Item item) {		
 		if (item.getSellIn() < 1) {

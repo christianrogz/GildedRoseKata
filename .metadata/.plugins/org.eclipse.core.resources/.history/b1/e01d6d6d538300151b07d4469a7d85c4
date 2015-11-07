@@ -1,0 +1,22 @@
+package gildedrose;
+
+public class Sulfuras extends Quality{
+	@Override
+	public void update(Item item) {
+		//Tiene calidad 80 y nunca se modifica
+		if(item.getSellIn() < 1)
+		{
+			// reduceSellIn dos veces mas rapido
+			item.setSellIn(item.getSellIn() - 2);
+		} else {
+			item.setSellIn(item.getSellIn() - 1);
+		}
+	}
+	
+	
+	
+	/*@Override
+	public void reduceSellIn(Item item) {
+		//No se reduce su SellIn
+	}*/
+}

@@ -1,6 +1,6 @@
 package gildedrose;
 
-public class BackstagePasses extends Quality{
+public class BackstagePasses implements Strategy{
 	@Override
 	public void update(Item item) {
 		if (item.getSellIn() < 11) {

@@ -1,6 +1,6 @@
 package gildedrose;
 
-public class Sulfuras extends Quality{
+public class Sulfuras implements Strategy{
 	@Override
 	public void update(Item item) {
 		//Tiene calidad 80 y nunca se modifica
